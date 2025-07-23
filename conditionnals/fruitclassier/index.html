@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Category Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f4f4f4;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Check Fruit Category</h2>
+  <input type="text" id="fruitInput" placeholder="Enter a fruit name">
+  <br>
+  <button onclick="checkCategory()">Check</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkCategory() {
+      const fruit = document.getElementById("fruitInput").value.toLowerCase().trim();
+      let category;
+
+      switch (fruit) {
+        case "orange":
+        case "lemon":
+        case "lime":
+        case "grapefruit":
+          category = "Citrus";
+          break;
+        case "strawberry":
+        case "blueberry":
+        case "raspberry":
+        case "blackberry":
+          category = "Berry";
+          break;
+        case "mango":
+        case "pineapple":
+        case "banana":
+        case "papaya":
+          category = "Tropical";
+          break;
+        case "apple":
+        case "pear":
+        case "peach":
+        case "plum":
+          category = "Pome/Stone Fruit";
+          break;
+        case "":
+          category = "Please enter a fruit name.";
+          break;
+        default:
+          category = "Unknown fruit category.";
+      }
+
+      document.getElementById("result").textContent = `Category: ${category}`;
+    }
+  </script>
+
+</body>
+</html>

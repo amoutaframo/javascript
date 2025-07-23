@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City to Country Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      padding: 40px;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Find the Country by City</h2>
+  <input type="text" id="cityInput" placeholder="Enter a city name">
+  <button onclick="findCountry()">Search</button>
+
+  <div id="result"></div>
+
+  <script>
+    const cityToCountry = {
+      "paris": "France",
+      "london": "United Kingdom",
+      "tokyo": "Japan",
+      "nairobi": "Kenya",
+      "new york": "USA",
+      "beijing": "China",
+      "madrid": "Spain",
+      "berlin": "Germany",
+      "cairo": "Egypt",
+      "sydney": "Australia",
+      "djibouti": "Djibouti",
+      "rome": "Italy",
+      "delhi": "India",
+      "moscow": "Russia",
+      "toronto": "Canada"
+    };
+
+    function findCountry() {
+      const city = document.getElementById("cityInput").value.toLowerCase().trim();
+      const country = cityToCountry[city];
+
+      const result = document.getElementById("result");
+      if (city === "") {
+        result.textContent = "Please enter a city name.";
+      } else if (country) {
+        result.textContent = `The country for "${city}" is: ${country}`;
+      } else {
+        result.textContent = `City "${city}" not found in the database.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
