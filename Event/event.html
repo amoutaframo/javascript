@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <button   onclick="white()"> make me white</button>
+    <br>
+     <button onmouseover="purple()" onmouseout="lightpurple()" > click me to salam</button>
+    <script>
+        function dosalam(){
+console.log("Asalamu Alaykum fatouma")
+        }
+
+        function purple(){
+           document.body.style.backgroundColor="purple" 
+        }
+         function lightpurple(){
+           document.body.style.backgroundColor="green" 
+        }
+        
+         function white(){
+           document.body.style.backgroundColor="white" 
+        }
+
+
+    </script>
+</body>
+</html>
